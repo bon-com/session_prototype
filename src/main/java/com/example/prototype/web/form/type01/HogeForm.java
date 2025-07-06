@@ -1,4 +1,4 @@
-package com.example.prototype.web.form;
+package com.example.prototype.web.form.type01;
 
 import lombok.Data;
 import lombok.ToString;

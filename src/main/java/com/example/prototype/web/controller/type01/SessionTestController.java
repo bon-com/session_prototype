@@ -1,4 +1,4 @@
-package com.example.prototype.web.controller;
+package com.example.prototype.web.controller.type01;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import com.example.prototype.web.form.HogeForm;
+import com.example.prototype.web.form.type01.HogeForm;
 
 @Controller
 @RequestMapping("test")
@@ -18,7 +18,7 @@ public class SessionTestController {
 
 	@GetMapping(value = "/")
 	public String other() {
-		return "test/test_top";
+		return "type01/test/test_top";
 	}
 	
 	/*
@@ -28,7 +28,7 @@ public class SessionTestController {
 	@GetMapping(value = "/test01-1")
 	public String test01_1(@ModelAttribute("hogeForm") HogeForm form) {
 		logger.debug("★HogeFormのセッション参照不可確認★： {}\n", form);
-		return "test/test_01";
+		return "type01/test/test_01";
 	}
 	
 	/* 
@@ -41,6 +41,6 @@ public class SessionTestController {
 		if (form != null) {
 			logger.debug("★HogeFormのセッション参照不可確認★： {}\n", form);
 		}
-		return "test/test_01";
+		return "type01/test/test_01";
 	}
 }
