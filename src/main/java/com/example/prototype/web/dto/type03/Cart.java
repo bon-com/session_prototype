@@ -1,4 +1,4 @@
-package com.example.prototype.web.dto.type02;
+package com.example.prototype.web.dto.type03;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

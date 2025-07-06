@@ -210,8 +210,8 @@
                     </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
                   </propertyDescriptors>
                   <stereoType></stereoType>
-                  <name>com.example.prototype.web.dto.type02.Cart</name>
-                  <path>/session_prototype/src/main/java/com/example/prototype/web/dto/type02/Cart.java</path>
+                  <name>com.example.prototype.web.dto.type03.Cart</name>
+                  <path>/session_prototype/src/main/java/com/example/prototype/web/dto/type03/Cart.java</path>
                   <isAbstract>false</isAbstract>
                 </source>
                 <target class="net.java.amateras.uml.classdiagram.model.ClassModel" reference="../../.."/>
@@ -309,8 +309,8 @@
               </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
             </propertyDescriptors>
             <stereoType></stereoType>
-            <name>com.example.prototype.web.dto.type02.CartItem</name>
-            <path>/session_prototype/src/main/java/com/example/prototype/web/dto/type02/CartItem.java</path>
+            <name>com.example.prototype.web.dto.type03.CartItem</name>
+            <path>/session_prototype/src/main/java/com/example/prototype/web/dto/type03/CartItem.java</path>
             <isAbstract>false</isAbstract>
           </net.java.amateras.uml.classdiagram.model.ClassModel>
           <net.java.amateras.uml.classdiagram.model.ClassModel reference="../net.java.amateras.uml.classdiagram.model.ClassModel[2]/targetConnections/net.java.amateras.uml.classdiagram.model.AssociationModel[2]/source"/>
@@ -445,8 +445,8 @@
         </net.java.amateras.uml.properties.BooleanPropertyDescriptor>
       </propertyDescriptors>
       <stereoType></stereoType>
-      <name>com.example.prototype.web.dto.type02.Item</name>
-      <path>/session_prototype/src/main/java/com/example/prototype/web/dto/type02/Item.java</path>
+      <name>com.example.prototype.web.dto.type03.Item</name>
+      <path>/session_prototype/src/main/java/com/example/prototype/web/dto/type03/Item.java</path>
       <isAbstract>false</isAbstract>
     </net.java.amateras.uml.classdiagram.model.ClassModel>
     <net.java.amateras.uml.classdiagram.model.ClassModel reference="../net.java.amateras.uml.classdiagram.model.ClassModel/parent/children/net.java.amateras.uml.classdiagram.model.ClassModel[2]"/>

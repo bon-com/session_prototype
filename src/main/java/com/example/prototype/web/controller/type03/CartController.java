@@ -1,4 +1,4 @@
-package com.example.prototype.web.controller.type02;
+package com.example.prototype.web.controller.type03;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.prototype.biz.service.type02.CartService;
-import com.example.prototype.biz.service.type02.ItemService;
-import com.example.prototype.web.dto.type02.CartAddForm;
+import com.example.prototype.biz.service.type03.CartService;
+import com.example.prototype.biz.service.type03.ItemService;
+import com.example.prototype.web.dto.type03.CartAddForm;
 
 @Controller
-@RequestMapping("type02/cart")
+@RequestMapping("type03/cart")
 public class CartController {
 	
 	/** 商品サービス */
@@ -36,7 +36,7 @@ public class CartController {
 			cartService.addItem(item, quantity);
 		}
 
-		return "redirect:/type02/items/";
+		return "redirect:/type03/items/";
 	}
 	
 	/**
@@ -47,6 +47,6 @@ public class CartController {
 	@GetMapping(value = "/delete/{id}")
 	public String deleteItem(@PathVariable String id) {
 		cartService.deleteItem(id);
-		return "redirect:/type02/order/";
+		return "redirect:/type03/order/";
 	}
 }

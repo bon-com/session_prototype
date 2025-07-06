@@ -22,19 +22,27 @@ public class Type01Controller {
 
 	private static final Logger logger = LoggerFactory.getLogger(Type01Controller.class);
 	
-	@ModelAttribute("hogeForm")
+	/*
+	 * typesでセッションを保持する型を指定しているため、HogeFormの型がセッションで管理される
+	 * そのため、@ModelAttribute(name="xxx")のキー指定は不要
+	 * キーは「hogeForm（クラス名の先頭小文字）」が自動設定される
+	 */
+	@ModelAttribute 
 	public HogeForm setUpForm() {
 		return new HogeForm();
 	}
 
 	@GetMapping(value = "/first")
-	public String first(@ModelAttribute("hogeForm") HogeForm form) {
-		logger.debug("★セッション確認★： {}\n", form);
+	public String first() {
 		return "type01/first";
 	}
 
+	/* 
+	 * @ModelAttributeにて初期化したセッションオブジェクトをハンドラの引数で取得⇒セッションに登録される
+	 * @ModelAttributeアノテーションも省略できる
+	 */
 	@PostMapping(value = "/second-post")
-	public String secondPost(@ModelAttribute("hogeForm") HogeForm form) {
+	public String secondPost(HogeForm form) {
 		logger.debug("★セッション確認★： {}\n", form);
 		return "redirect:/type01/second";
 	}

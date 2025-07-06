@@ -15,7 +15,7 @@
 		<li>セッション参照確認：　<a href="<c:url value='/test/'/>">こちら</a></li>
 	</ul>
 	<ul>
-		<li>セッションスコープの利用：　<a href="<c:url value='/type02/items/'/>">こちら</a></li>
+		<li>セッションスコープの利用：　<a href="<c:url value='/type03/items/'/>">こちら</a></li>
 	</ul>
 </body>
 </html>

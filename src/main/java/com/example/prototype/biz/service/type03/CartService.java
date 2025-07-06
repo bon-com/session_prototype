@@ -1,4 +1,4 @@
-package com.example.prototype.biz.service.type02;
+package com.example.prototype.biz.service.type03;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.prototype.web.dto.type02.Cart;
-import com.example.prototype.web.dto.type02.CartItem;
-import com.example.prototype.web.dto.type02.Item;
+import com.example.prototype.web.dto.type03.Cart;
+import com.example.prototype.web.dto.type03.CartItem;
+import com.example.prototype.web.dto.type03.Item;
 
 /**
  * カートサービス
