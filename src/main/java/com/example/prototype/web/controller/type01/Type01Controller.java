@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.example.prototype.web.form.type01.HogeForm;
+import com.example.prototype.web.dto.type01.HogeForm;
 
 /*
  * @SessionAttributesを使用して同一クラス内のセッションを管理する
