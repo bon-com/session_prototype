@@ -8,34 +8,33 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.prototype.web.dto.type02.Cart;
-import com.example.prototype.web.dto.type02.CartItem;
+import com.example.prototype.biz.service.type02.CartService;
 
 @Controller
 @RequestMapping("type02/order")
 public class OrderController {
-	/** カート（セッション管理） */
+	
+	/** カートサービス */
 	@Autowired
-	private Cart cart;
+	private CartService cartService;
 	
 	/**
 	 * 注文内容確認画面の表示
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/")
+	@GetMapping(value = "/")
 	public String confirm(Model model) {
 		// カート情報
-		model.addAttribute("cartitems", cart.getItems().values());
+		model.addAttribute("cartitems", cartService.getAllItems());
 		
 		// 合計金額
-		int totalPrice = cart.getItems().values().stream().mapToInt(CartItem::getTotal).sum();
-		model.addAttribute("totalPrice", totalPrice);
+		model.addAttribute("totalPrice", cartService.getTotalPrice());
 		
 		return "type02/confirm";
 	}
 	
-	@GetMapping("/complete")
+	@GetMapping(value = "/complete")
 	public String complete(HttpSession session) {
 		// カート情報をセッションから削除
 		// SpringがセッションスコープBeanは内部で「scopedTarget.XXX」と保持される

@@ -20,10 +20,18 @@
 			<td>${cartItem.item.name}　</td>
 			<td>${cartItem.quantity}個　</td>
 			<td>${cartItem.total}円　</td>
+			<td><a href="${pageContext.request.contextPath}/type02/cart/delete/${cartItem.item.id}">削除</td>
 		</tr>
 		</c:forEach>
 	</table>
 	<h5>合計：　${totalPrice}円</h5>
-	<a href="${pageContext.request.contextPath}/type02/order/complete">購入する</a>
+	<c:choose>
+	<c:when test="${totalPrice != 0}">
+		<a href="${pageContext.request.contextPath}/type02/order/complete">購入する</a>
+	</c:when>
+	<c:otherwise>
+		<a href="${pageContext.request.contextPath}/type02/items/">商品一覧に戻る</a>
+	</c:otherwise>
+	</c:choose>
 </body>
 </html>

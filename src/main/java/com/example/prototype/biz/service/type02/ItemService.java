@@ -11,12 +11,16 @@ import org.springframework.stereotype.Service;
 
 import com.example.prototype.web.dto.type02.Item;
 
+/**
+ * 商品サービス
+ */
 @Service
 public class ItemService {
 
 	/** 商品一覧 */
 	private final Map<String, Item> itemMap = new LinkedHashMap<>();
-
+	
+	/** 本来はDBから */
 	@PostConstruct
 	public void init() {
 		itemMap.put("A001", new Item("A001", "大葉", 100));
