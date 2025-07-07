@@ -11,18 +11,18 @@
 	<table>
 		<tr>
 			<th>入力１：　</th>
-			<td>${hoge.input01}</td>
+			<td>${hoge1.input01}</td>
 		</tr>
 		<tr>
 			<th>入力２：　</th>
-			<td>${hoge.input02}</td>
+			<td>${hoge2.input02}</td>
 		</tr>
 		<tr>
 			<th>入力３：　</th>
-			<td>${hoge.input03}</td>
+			<td>${hoge3.input03}</td>
 		</tr>
 	</table>
 	<br>
-	<a href="<c:url value='/type03/complete'/>">登録</a>
+	<a href="<c:url value='/type04/complete'/>">登録</a>
 </body>
 </html>

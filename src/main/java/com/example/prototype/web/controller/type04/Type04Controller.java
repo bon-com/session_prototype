@@ -1,4 +1,4 @@
-package com.example.prototype.web.controller.type02;
+package com.example.prototype.web.controller.type04;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,78 +16,77 @@ import com.example.prototype.web.dto.common.HogeForm3;
 
 /*
  * @SessionAttributesを使用して同一クラス内のセッションを管理する
- * types属性を使用して、複数のフォームをセッションで管理
+ * names属性を使用して、複数のフォームトをセッションで管理
  */
 @Controller
-@RequestMapping(value = "type02")
-@SessionAttributes(types = { HogeForm1.class, HogeForm2.class, HogeForm3.class })
-public class Type02Controller {
+@RequestMapping(value = "type04")
+@SessionAttributes(names = { "hoge1", "hoge2", "hoge3" })
+public class Type04Controller {
 
-	private static final Logger logger = LoggerFactory.getLogger(Type02Controller.class);
-
+	private static final Logger logger = LoggerFactory.getLogger(Type04Controller.class);
+	
 	/** セッションの初期化： HogeForm1 */
-	@ModelAttribute
+	@ModelAttribute(name = "hoge1")
 	public HogeForm1 setUpForm1() {
 		return new HogeForm1();
 	}
-
 	/** セッションの初期化： HogeForm2 */
-	@ModelAttribute
+	@ModelAttribute(name = "hoge2")
 	public HogeForm2 setUpForm2() {
 		return new HogeForm2();
 	}
-
 	/** セッションの初期化： HogeForm3 */
-	@ModelAttribute
+	@ModelAttribute(name = "hoge3")
 	public HogeForm3 setUpForm3() {
 		return new HogeForm3();
 	}
 
 	@GetMapping(value = "/first")
 	public String first() {
-		return "type02/first";
+		return "type04/first";
 	}
 
 	/*
-	 * @ModelAttributeにて初期化したセッションオブジェクトをハンドラの引数で取得⇒セッションに登録される
-	 * @ModelAttributeアノテーションも省略できる
+	 * names属性でキーを明確に指定しているため
+	 * @ModelAttributeアノテーションでキーを指定しないと
+	 * 引数でフォームの値は取得できるが、セッションに登録されない
 	 */
 	@PostMapping(value = "/second-post")
-	public String secondPost(HogeForm1 form) {
+	public String secondPost(@ModelAttribute("hoge1")HogeForm1 form) {
 		logger.debug("★セッション確認★： {}\n", form);
-		return "redirect:/type02/second";
+		return "redirect:/type04/second";
 	}
-
+	
 	@GetMapping(value = "/second")
 	public String second() {
-		return "type02/second";
+		return "type04/second";
 	}
 
 	@PostMapping(value = "/third-post")
-	public String thirdPost(@ModelAttribute HogeForm2 form) {
+	public String thirdPost(@ModelAttribute("hoge2") HogeForm2 form) {
 		logger.debug("★セッション確認★： {}\n", form);
-		return "redirect:/type02/third";
+		return "redirect:/type04/third";
 	}
-
+	
 	@GetMapping(value = "/third")
 	public String third() {
-		return "type02/third";
+		return "type04/third";
 	}
-
+	
 	@PostMapping(value = "/confirm-post")
-	public String confirmPost(@ModelAttribute HogeForm3 form) {
+	public String confirmPost(@ModelAttribute("hoge3") HogeForm3 form) {
 		logger.debug("★セッション確認★： {}\n", form);
-		return "redirect:/type02/confirm";
+		return "redirect:/type04/confirm";
 	}
-
+	
 	@GetMapping(value = "/confirm")
 	public String confirm() {
-		return "type02/confirm";
+		return "type04/confirm";
 	}
-
+	
 	@GetMapping(value = "/complete")
 	public String complete(SessionStatus sessionStatus) {
 		sessionStatus.setComplete();
-		return "type02/complete";
+		return "type04/complete";
 	}
 }

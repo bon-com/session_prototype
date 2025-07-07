@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>入力その２</title>
+<title>入力その１</title>
 </head>
 <body>
-	<h3>入力その２</h3>
-	<form:form modelAttribute="hogeForm2" action="${pageContext.request.contextPath}/type02/third-post">
+	<h3>入力その１</h3>
+	<form:form modelAttribute="hoge" action="${pageContext.request.contextPath}/type03/second-post">
 		<table>
 			<tr>
-				<th>入力２</th>
-				<td><form:input path="input02" /></td>
+				<th>入力１</th>
+				<td><form:input path="input01" /></td>
 			</tr>
 		</table>
 		<br>

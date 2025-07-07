@@ -8,8 +8,7 @@
 </head>
 <body>
 	<h3>入力その１</h3>
-	<c:url var="actionUrl" value="/type01/second-post" />
-	<form:form modelAttribute="hoge1" action="${pageContext.request.contextPath}/type02/second-post">
+	<form:form modelAttribute="hogeForm1" action="${pageContext.request.contextPath}/type02/second-post">
 		<table>
 			<tr>
 				<th>入力１</th>

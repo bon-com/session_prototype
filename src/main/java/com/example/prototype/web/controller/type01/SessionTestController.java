@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import com.example.prototype.web.dto.type01.HogeForm;
+import com.example.prototype.web.dto.common.HogeForm;
 
 @Controller
 @RequestMapping("test")

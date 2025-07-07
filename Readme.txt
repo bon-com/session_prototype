@@ -2,6 +2,8 @@
 ※最低限のセッションの動きを確認したいため、入力チェック等はなし
 
 ◇インデックス
-■type01：@SessionAttributesのtypes属性を指定して、同一コントローラー内のフォームをセッションで管理する
-■type02：@SessionAttributesのnames属性を指定して、同一コントローラー内の複数フォームをセッションで管理する
-■type03：セッションスコープBeanでDIしながらセッション管理する（商品をカートに出し入れ）
+■type01：@SessionAttributesのtypes属性を指定して、同一コントローラー内の1つのフォームをセッションで管理する
+■type02：@SessionAttributesのtypes属性を指定して、同一コントローラー内の複数フォームをセッションで管理する
+■type03：@SessionAttributesのnames属性を指定して、同一コントローラー内の1つのフォームをセッションで管理する
+■type04：@SessionAttributesのnames属性を指定して、同一コントローラー内の複数フォームをセッションで管理する
+■type05：セッションスコープBeanでDIしながらセッション管理する（商品のカート追加機能）

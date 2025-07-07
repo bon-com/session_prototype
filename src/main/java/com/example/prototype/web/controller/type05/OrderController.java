@@ -1,4 +1,4 @@
-package com.example.prototype.web.controller.type03;
+package com.example.prototype.web.controller.type05;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,10 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.prototype.biz.service.type03.CartService;
+import com.example.prototype.biz.service.type05.CartService;
 
 @Controller
-@RequestMapping("type03/order")
+@RequestMapping("type05/order")
 public class OrderController {
 	
 	/** カートサービス */
@@ -31,7 +31,7 @@ public class OrderController {
 		// 合計金額
 		model.addAttribute("totalPrice", cartService.getTotalPrice());
 		
-		return "type03/confirm";
+		return "type05/confirm";
 	}
 	
 	@GetMapping(value = "/complete")
@@ -39,6 +39,6 @@ public class OrderController {
 		// カート情報をセッションから削除
 		// SpringがセッションスコープBeanは内部で「scopedTarget.XXX」と保持される
 	    session.removeAttribute("scopedTarget.cart");
-		return "type03/complete";
+		return "type05/complete";
 	}
 }

@@ -11,15 +11,15 @@
 	<table>
 		<tr>
 			<th>入力１：　</th>
-			<td>${hoge1.input01}</td>
+			<td>${hogeForm1.input01}</td>
 		</tr>
 		<tr>
 			<th>入力２：　</th>
-			<td>${hoge2.input02}</td>
+			<td>${hogeForm2.input02}</td>
 		</tr>
 		<tr>
 			<th>入力３：　</th>
-			<td>${hoge3.input03}</td>
+			<td>${hogeForm3.input03}</td>
 		</tr>
 	</table>
 	<br>

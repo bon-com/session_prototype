@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h3>入力その２</h3>
-	<form:form modelAttribute="hogeForm2" action="${pageContext.request.contextPath}/type02/third-post">
+	<form:form modelAttribute="hoge2" action="${pageContext.request.contextPath}/type04/third-post">
 		<table>
 			<tr>
 				<th>入力２</th>

@@ -1,4 +1,4 @@
-package com.example.prototype.biz.service.type03;
+package com.example.prototype.biz.service.type05;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
-import com.example.prototype.web.dto.type03.Item;
+import com.example.prototype.web.dto.type05.Item;
 
 /**
  * 商品サービス
