@@ -9,6 +9,6 @@
 	<h3>注文完了</h3>
 	<hr />
 	<h2>ご購入ありがとうございました！</h2>
-	<a href="${pageContext.request.contextPath}/type03/items/">商品一覧に戻る</a>
+	<a href="<c:url value='/'/>">TOP</a>
 </body>
 </html>

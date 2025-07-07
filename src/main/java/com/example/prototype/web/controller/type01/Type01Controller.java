@@ -14,6 +14,7 @@ import com.example.prototype.web.dto.type01.HogeForm;
 
 /*
  * @SessionAttributesを使用して同一クラス内のセッションを管理する
+ * types属性を使用して、1種類のフォームをセッションで管理
  */
 @Controller
 @RequestMapping(value = "type01")
