@@ -18,7 +18,7 @@ import com.example.prototype.web.dto.common.HogeForm;
  */
 @Controller
 @RequestMapping(value = "type01")
-@SessionAttributes(types = HogeForm.class)
+@SessionAttributes(types = { HogeForm.class })
 public class Type01Controller {
 
 	private static final Logger logger = LoggerFactory.getLogger(Type01Controller.class);
@@ -46,6 +46,7 @@ public class Type01Controller {
 	@PostMapping(value = "/second-post")
 	public String secondPost(HogeForm form) {
 		logger.debug("★セッション確認★： {}\n", form);
+		form.setInput01("書き換え");
 		return "redirect:/type01/second";
 	}
 	

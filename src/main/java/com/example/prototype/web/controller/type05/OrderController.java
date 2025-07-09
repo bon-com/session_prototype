@@ -27,7 +27,6 @@ public class OrderController {
 	public String confirm(Model model) {
 		// カート情報
 		model.addAttribute("cartitems", cartService.getAllItems());
-		
 		// 合計金額
 		model.addAttribute("totalPrice", cartService.getTotalPrice());
 		
@@ -37,7 +36,6 @@ public class OrderController {
 	@GetMapping(value = "/complete")
 	public String complete(HttpSession session) {
 		// カート情報をセッションから削除
-		// SpringがセッションスコープBeanは内部で「scopedTarget.XXX」と保持される
 	    session.removeAttribute("scopedTarget.cart");
 		return "type05/complete";
 	}

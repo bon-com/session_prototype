@@ -7,16 +7,17 @@
 </head>
 <body>
 	<h3>商品一覧</h3>
-	<!-- DIコンテナで管理しているセッションスコープBeanはSpELを利用して参照する -->
-	<spring:eval var="cart" expression="@cart"/>
+	<%-- DIコンテナで管理しているセッションスコープBeanはSpELを利用して参照する --%>
+	<spring:eval var="cart" expression="@cart"/><%-- オブジェクトだけ取得したり --%>
+	<spring:eval var="itemCount" expression="@cart.getTotal()"  /><%-- メソッドを指定したり --%>
 	<h5>カートの数量：　${cart.total}</h5>
+	<p>カートの数量: ${itemCount}</p>
 	<hr />
 	<table>
 		<tr>
 			<th>商品名</th>
 			<th>値段</th>
 			<th>数量</th>
-			<th>操作</th>
 		</tr>
 		<c:forEach var="item" items="${items}">
 			<form method="post" action="${pageContext.request.contextPath}/type05/cart/add">

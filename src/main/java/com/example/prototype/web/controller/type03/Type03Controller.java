@@ -18,7 +18,7 @@ import com.example.prototype.web.dto.common.HogeForm;
  */
 @Controller
 @RequestMapping(value = "type03")
-@SessionAttributes(names = "hoge")
+@SessionAttributes(names = { "hoge" })
 public class Type03Controller {
 
 	private static final Logger logger = LoggerFactory.getLogger(Type03Controller.class);
@@ -36,11 +36,11 @@ public class Type03Controller {
 
 	/* 
 	 * @ModelAttributeにて初期化したセッションオブジェクトをハンドラの引数で取得⇒セッションに登録される
-	 * @ModelAttributeアノテーションも省略できる
 	 */
 	@PostMapping(value = "/second-post")
 	public String secondPost(@ModelAttribute("hoge") HogeForm form) {
 		logger.debug("★セッション確認★： {}\n", form);
+		form.setInput01("書き換え");
 		return "redirect:/type03/second";
 	}
 	
