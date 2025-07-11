@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.prototype.biz.service.type05.CartService;
+import com.example.prototype.web.dto.type05.Cart;
 
 @Controller
 @RequestMapping("type05/order")
 public class OrderController {
 	
+	/** カート（セッション管理） */
+	@Autowired
+	private Cart cart;
 	/** カートサービス */
 	@Autowired
 	private CartService cartService;
@@ -26,9 +30,9 @@ public class OrderController {
 	@GetMapping(value = "/")
 	public String confirm(Model model) {
 		// カート情報
-		model.addAttribute("cartitems", cartService.getAllItems());
+		model.addAttribute("cartitems", cartService.getAllItems(cart));
 		// 合計金額
-		model.addAttribute("totalPrice", cartService.getTotalPrice());
+		model.addAttribute("totalPrice", cartService.getTotalPrice(cart));
 		
 		return "type05/confirm";
 	}

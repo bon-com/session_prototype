@@ -9,12 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.prototype.biz.service.type05.CartService;
 import com.example.prototype.biz.service.type05.ItemService;
+import com.example.prototype.web.dto.type05.Cart;
 import com.example.prototype.web.dto.type05.CartAddForm;
 
 @Controller
 @RequestMapping("type05/cart")
 public class CartController {
 	
+	/** カート（セッション管理） */
+	@Autowired
+	private Cart cart;
 	/** 商品サービス */
 	@Autowired
 	private ItemService itemService;
@@ -33,7 +37,7 @@ public class CartController {
 		var item = itemService.findById(form.getItemId());
 		int quantity = form.getQuantity();
 		if (item != null && quantity > 0) {
-			cartService.addItem(item, quantity);
+			cartService.addItem(cart, item, quantity);
 		}
 
 		return "redirect:/type05/items/";
@@ -46,7 +50,7 @@ public class CartController {
 	 */
 	@GetMapping(value = "/delete/{id}")
 	public String deleteItem(@PathVariable String id) {
-		cartService.deleteItem(id);
+		cartService.deleteItem(cart, id);
 		return "redirect:/type05/order/";
 	}
 }
